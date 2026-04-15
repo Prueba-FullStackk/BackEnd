@@ -7,15 +7,21 @@ import java.time.LocalDateTime;
 public class Personaje {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
 
+    @Column(length = 50)
     private String nombre;
+
+    @Column(length = 50)
     private String identificacion;
+
     private String imagen;
+
+    @Column(length = 50)
     private String rol;
 
-    @Column(length = 1000)
+    @Column(length = 500)
     private String descripcion;
 
     @Column(name = "fecha_creacion")
@@ -25,9 +31,9 @@ public class Personaje {
     public Personaje() {}
 
     // Getters y Setters
-    public Long getId() { return id; }
+    public String getId() { return id; }
 
-    public void setId(Long id) { this.id = id; }
+    public void setId(String id) { this.id = id; }
 
     public String getNombre() { return nombre; }
 
